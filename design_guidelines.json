@@ -1,0 +1,147 @@
+{
+  "identity": {
+    "name": "E1",
+    "role": "Anti-AI Designer",
+    "principles": [
+      "Fusion over Imitation",
+      "Emotion First",
+      "Content is king",
+      "Zoom in",
+      "Negative Space",
+      "Contrast"
+    ]
+  },
+  "project": {
+    "name": "ChatPDF",
+    "description": "A modern, minimal dashboard for analyzing and chatting with PDF documents using AI.",
+    "target_audience": "Researchers, students, professionals",
+    "platform": "Web Application (Dashboard)"
+  },
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "headings": "Plus Jakarta Sans, sans-serif",
+        "body": "IBM Plex Sans, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-4xl font-bold tracking-tight",
+        "h2": "text-3xl font-semibold tracking-tight",
+        "h3": "text-2xl font-semibold tracking-tight",
+        "body_large": "text-lg leading-relaxed",
+        "body_default": "text-base leading-relaxed",
+        "caption": "text-sm text-muted-foreground"
+      }
+    },
+    "colors": {
+      "palette": {
+        "primary": "#0F172A",
+        "primary_foreground": "#F8FAFC",
+        "secondary": "#F1F5F9",
+        "secondary_foreground": "#0F172A",
+        "accent": "#3B82F6",
+        "accent_foreground": "#FFFFFF",
+        "background": "#FFFFFF",
+        "surface": "#F8FAFC",
+        "border": "#E2E8F0",
+        "muted": "#94A3B8",
+        "destructive": "#EF4444"
+      },
+      "usage": {
+        "sidebar_bg": "bg-slate-50/50",
+        "main_bg": "bg-white",
+        "active_item": "bg-white shadow-sm border-slate-200",
+        "text_primary": "text-slate-900",
+        "text_secondary": "text-slate-500"
+      }
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-8 lg:p-12",
+      "element_gap": "gap-4 md:gap-6",
+      "section_gap": "gap-8 md:gap-12"
+    },
+    "visual_enhancers": {
+      "radius": "rounded-lg",
+      "shadows": {
+        "card": "shadow-sm hover:shadow-md transition-shadow duration-200",
+        "floating": "shadow-xl shadow-slate-200/50"
+      },
+      "borders": "border border-slate-200",
+      "glassmorphism": "backdrop-blur-xl bg-white/80 border-b border-slate-200/50"
+    }
+  },
+  "layout_strategy": {
+    "dashboard_structure": {
+      "type": "Sidebar + Main Content",
+      "sidebar": {
+        "width": "w-64 lg:w-72",
+        "behavior": "Fixed left, hidden on mobile (drawer)",
+        "content": "Logo, New Chat Button, History List, User Profile"
+      },
+      "main_area": {
+        "behavior": "Flex column, h-screen, overflow-hidden",
+        "header": "h-16 border-b flex items-center justify-between px-6",
+        "content": "flex-1 overflow-hidden relative"
+      }
+    },
+    "modes": {
+      "empty_state": "Centered content with quick actions and upload area",
+      "chat_only": "Centralized chat container (max-w-3xl mx-auto)",
+      "split_view": "Two columns: PDF Viewer (Left/Top) + Chat (Right/Bottom)"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-slate-900 text-white hover:bg-slate-800 shadow-sm rounded-md px-4 py-2",
+      "secondary": "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 shadow-sm rounded-md px-4 py-2",
+      "ghost": "hover:bg-slate-100 text-slate-600 hover:text-slate-900 rounded-md px-3 py-2"
+    },
+    "inputs": {
+      "chat_box": "bg-white border-slate-200 focus:ring-2 focus:ring-slate-900/10 rounded-xl shadow-sm p-4",
+      "search": "bg-slate-100 border-transparent focus:bg-white focus:border-slate-200 rounded-md h-9"
+    },
+    "cards": {
+      "file_item": "group flex items-center gap-3 p-3 rounded-lg hover:bg-white hover:shadow-sm border border-transparent hover:border-slate-200 transition-all cursor-pointer"
+    }
+  },
+  "assets": {
+    "icons": "lucide-react",
+    "images": {
+      "abstract_bg": "https://images.unsplash.com/photo-1692889783742-7d99b124c402?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxtaW5pbWFsJTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjBzaGFwZXMlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY4MDQwODI4fDA&ixlib=rb-4.1.0&q=85",
+      "geometric_pattern": "https://images.unsplash.com/photo-1764437358284-4721473936f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxtaW5pbWFsJTIwYWJzdHJhY3QlMjBnZW9tZXRyaWMlMjBzaGFwZXMlMjB3aGl0ZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzY4MDQwODI4fDA&ixlib=rb-4.1.0&q=85"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Implement a clean, distraction-free interface. White space is a feature.",
+    "Use 'Plus Jakarta Sans' for all headings to give a modern tech feel.",
+    "The Sidebar should be subtle (slate-50) to differentiate from the main white workspace.",
+    "For the 'BalochAI' general chat, use a centered layout similar to standard LLM interfaces.",
+    "For PDF Chat, use a split-pane layout: PDF on the left (50%), Chat on the right (50%). Allow resizing if possible, or fixed ratio.",
+    "Use Shadcn 'ScrollArea' for the chat message list to ensure custom scrollbars.",
+    "Use Shadcn 'Dialog' for the PDF upload modal if not doing drag-and-drop directly on the empty state.",
+    "Ensure all interactive elements have 'data-testid' attributes.",
+    "Do not use gradients for backgrounds; use the provided abstract images subtly if needed, or stick to clean solid colors.",
+    "The 'Model Selector' should be prominent in the header.",
+    "Use 'sonner' for all notifications (upload success, error messages)."
+  ],
+  "universal_guidelines": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use 'sonner' for toasts"
+  ]
+}
